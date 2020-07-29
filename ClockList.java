@@ -1,6 +1,5 @@
 
 public abstract class ClockList {
-   
     private ClockNode first,last;//instance variable of ClockList
     private int length;//instance variable of clockList
     
@@ -38,19 +37,5 @@ public abstract class ClockList {
     }
 
 
+
 }
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-

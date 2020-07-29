@@ -1,6 +1,5 @@
 
 public class SortedClockList extends ClockList {
-    
     public SortedClockList() {//on its parent class constructor to initialize the variable
         super();//Sorted ClockList constructor
     }
@@ -27,8 +26,4 @@ public class SortedClockList extends ClockList {
         return;      
     }
 
-
 }
-
-
-

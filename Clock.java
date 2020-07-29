@@ -1,13 +1,26 @@
+
 public class Clock {
-    
     private int hours;
     private int minutes;
     private int seconds;
     
     public Clock (int hours,int minutes,int seconds) {//making a constructor
-        this.hours=hours;  //hours hh24(0-23)in time
-        this.minutes=minutes;//minutes mm(0-59)
-        this.seconds=seconds;//seconds ss(0-59)
+        //Setting  the condition if the condition does not met then throw with the message
+       
+            if(hours>23||hours<0||minutes>59||minutes<0||seconds>59||seconds<0) {
+                throw new IllegalClockException("this data is invalid "+hours+":"+minutes+":"+seconds);
+            }
+        
+        
+            else {
+            this.hours=hours;  //hours hh24(0-23)in time
+            this.minutes=minutes;//minutes mm(0-59)
+            this.seconds=seconds;//seconds ss(0-59)
+            }
+       
+       
+          
+       
     }
     
     public void setHours(int hours) {//setting hours
@@ -53,7 +66,3 @@ public class Clock {
         
     }
 }
-
-
-
-
