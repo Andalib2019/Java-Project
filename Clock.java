@@ -1,76 +1,43 @@
-/**
- * 
- * 
- * @author andalibaryan
- *
- */
 public class Clock {
     
     private int hours;
     private int minutes;
     private int seconds;
-    /**
-     * making a constructor
-     * @param hours  hh24(0~23) in time
-     * @param minutes mm(0-59) 
-     * @param seconds ss(0-59)
-     */
-    public Clock (int hours,int minutes,int seconds) {
-        this.hours=hours;
-        this.minutes=minutes;
-        this.seconds=seconds;
-    }
-    /**
-     * setting hours
-     * @param hours 
-     */
-    public void setHours(int hours) {
-        this.hours=hours;
-    }
-    /**
-     * setting minutes
-     * @param minutes
-     */
-    public void setMinutes(int minutes) {
-       this.minutes=minutes;
-    }
-    /**
-     * setting seconds
-     * @param seconds
-     */
     
-    public void setSeconds(int seconds) {
+    public Clock (int hours,int minutes,int seconds) {//making a constructor
+        this.hours=hours;  //hours hh24(0-23)in time
+        this.minutes=minutes;//minutes mm(0-59)
+        this.seconds=seconds;//seconds ss(0-59)
+    }
+    
+    public void setHours(int hours) {//setting hours
+        this.hours=hours;
+    }
+    
+    public void setMinutes(int minutes) {//setting minutes
+        this.minutes=minutes;
+     }
+    
+    public void setSeconds(int seconds) {//setting seconds
         this.seconds=seconds;
     }
-    /**
-     * getting hours
-     * @return hours
-     */
-    public int getHours() {
+    
+    public int getHours() {//getting hours
         return(this.hours);
     }
-    /**
-     * getting minutes
-     * @return minutes
-     */
-    public int getMinutes() {
+    
+    public int getMinutes() {//getting minutes
         return(this.minutes);
     }
-    /**
-     * getting seconds
-     * @return seconds
-     */
-    public int getSeconds() {
+    
+    public int getSeconds() {//getting seconds
         return(this.seconds);
     }
-    /**
-     *it add 0 with the empty string of minutes and seconds
-     * @return time string such as hh:mi:ss
-     */
+    
     public String toString() {
         String str = hours+":";
         if(minutes<10) {
-            str+="0"+minutes+":";
+            str+="0"+minutes+":";//it add 0 with the empty string of minutes and seconds
         }
         else {
             str+=minutes+":";
@@ -82,14 +49,11 @@ public class Clock {
             str+=seconds;
         }
         
-        return str;
+        return str;//return time string such as hh:mi:ss
         
     }
-    
-    
-    
-    
-    
-    
-
 }
+
+
+
+

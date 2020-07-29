@@ -247,9 +247,4 @@ public class TextFileInput  {
           throw new RuntimeException(ioe);
        }  // catch
    }  // method readLineOriginal
-
-public String nextLine() {
-    // TODO Auto-generated method stub
-    return null;
-}
 }  // class TextFileInput
