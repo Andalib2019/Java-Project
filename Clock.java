@@ -1,5 +1,5 @@
 
-public class Clock {
+public class Clock implements Comparable<Clock>{
     private int hours;
     private int minutes;
     private int seconds;
@@ -65,4 +65,28 @@ public class Clock {
         return str;//return time string such as hh:mi:ss
         
     }
+    public int compareTo(Clock other) {//compare method with other hours, minutes, seconds
+        int result=0;
+        if(this.hours>other.hours)
+            result=1;
+        else if(this.hours<other.hours)
+            result =-1;
+        else {
+            if(this.minutes>other.minutes)
+                result=1;
+            else if(this.minutes<other.minutes)
+                result=-1;
+        
+        else {
+            if(this.seconds>other.seconds)
+                result=1;
+            else if(this.seconds<other.seconds)
+                result=-1;
+        }
+        }
+        
+    
+    return result;
+    }
+
 }

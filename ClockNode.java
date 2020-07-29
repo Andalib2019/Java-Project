@@ -13,4 +13,5 @@ public class ClockNode {
         data=c;
         next=null;
 }
+
 }

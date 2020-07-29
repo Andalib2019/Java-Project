@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.util.StringTokenizer;
+import java.util.TreeMap;
 
 public class FileMenuHandler implements ActionListener{
     ClockGUI gui;
@@ -41,10 +42,16 @@ public class FileMenuHandler implements ActionListener{
             TextFileInput in= new TextFileInput(fileSelected.getAbsolutePath());//making object in
             String line=in.readLine();//reading line from text
             UnsortedClockList ulist= new UnsortedClockList();//making new object
-            SortedClockList slist= new SortedClockList();//making new object//treemap[
+           //TreeMap provides an efficient means of storing key value
+            TreeMap<Clock,String>treemap=new TreeMap<>();
+            
+            
+            //Clock c=new Clock(hours,minutes,seconds);
+           // treemap.put(c,hours+":"+minutes+":"+seconds);
+            //SortedClockList slist= new SortedClockList();//making new object
             while(line != null) {//until the line will be null it will read the line
                 System.out.println("hi");
-                StringTokenizer st=new StringTokenizer(line,":");//using string tokinizer breaks the string into tokens
+                StringTokenizer st=new StringTokenizer(line,":");//using string tokenizer breaks the string into tokens
                 if(st.countTokens()!=3) {//count tokens
                     System.out.println(line);
                     line=in.readLine();
@@ -58,8 +65,13 @@ public class FileMenuHandler implements ActionListener{
                 try {//  it will take invalid data
                     Clock c=new Clock(arr[0],arr[1],arr[2]);
                     
+                    treemap.put(c,arr[0]+":"+arr[1]+":"+arr[2]);//put the data in the array
+                    
                     ulist.add(c);
-                    slist.add(c);//treemap.put method
+                    //treemap.put(c,hours+":"+minutes+":"+seconds);
+                   // treemap.put(c);
+                    
+                    //slist.add(c);//treemap.put method
                 }
                 catch(IllegalClockException e) {//it will show the message for invalid data
                     System.out.println(e.getMessage());
@@ -82,8 +94,11 @@ public class FileMenuHandler implements ActionListener{
                 //i=i.next;
                 it=it.next;
             }
-            //ClockGUI.initialize(slist,ulist);//initializing clock GUI
-            gui.initialize(slist,ulist);//initializing clock GUI//treemap
+            //initializing clock GUI
+            gui.initialize(treemap,ulist);
+            
+            
+            //gui.initialize(slist,ulist);//initializing clock GUI
             
             
  }
